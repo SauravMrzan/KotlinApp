@@ -29,6 +29,7 @@ class SignupActivity : AppCompatActivity() {
         binding.spinner.adapter=spinnerAdapter
 
 //        Auto complete text View
+//        Auto complete text View
         val cities = arrayOf("Kathmandu","Bhaktapur","Lalitpur","Dhading","Hetauda")
         val autoCompleteAdapter= ArrayAdapter(this@SignupActivity,android.R.layout.simple_dropdown_item_1line,cities)
         binding.autoCompleteTextView.setAdapter(autoCompleteAdapter)
