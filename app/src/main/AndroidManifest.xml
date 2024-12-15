@@ -13,10 +13,10 @@
         android:theme="@style/Theme.ProjectMobile"
         tools:targetApi="31">
         <activity
-            android:name=".DashboardActivity"
+            android:name=".adapter.Adapter"
             android:exported="false" />
         <activity
-            android:name=".adapter.Adapter"
+            android:name=".DashboardActivity"
             android:exported="false" />
         <activity
             android:name=".SignupActivity"

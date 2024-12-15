@@ -7,30 +7,32 @@
     android:background="#2196F3">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/bikepic"
         android:layout_width="183dp"
         android:layout_height="280dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bgi" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="83dp"
-        android:layout_marginTop="80dp"
+        android:id="@+id/lblTitle"
+        android:layout_width="135dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="45dp"
         android:text="Bike"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/bikepic"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="83dp"
-        android:layout_marginTop="34dp"
+        android:id="@+id/lblDesc"
+        android:layout_width="152dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="19dp"
         android:text="This is bike"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintStart_toEndOf="@+id/bikepic"
+        app:layout_constraintTop_toBottomOf="@+id/lblTitle" />
 </androidx.constraintlayout.widget.ConstraintLayout>

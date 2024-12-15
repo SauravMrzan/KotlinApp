@@ -3,18 +3,21 @@ package com.example.projectmobile
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
+
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projectmobile.adapter.SignAdapter
 import com.example.projectmobile.databinding.ActivityDashboardBinding
 
 class DashboardActivity : AppCompatActivity() {
     lateinit var binding: ActivityDashboardBinding
+    lateinit var recyclerView: RecyclerView
     var imageList=ArrayList<Int>()
     var titleList=ArrayList<String>()
     var descList=ArrayList<String>()
+    lateinit var adapter: SignAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -27,11 +30,9 @@ class DashboardActivity : AppCompatActivity() {
         val city= intent.getStringExtra("city").toString()
 
         binding.overallInfo.text="Welcome $username\n "+"Email: $email\n"+"Gender: $gender\n"+"Country: $country\n"+"City: $city\n"
+        binding.recylerView.layoutManager= LinearLayoutManager(this@DashboardActivity)
 
-
-        val recyclerView: RecyclerView = binding.recy
-        recyclerView.layoutManager= LinearLayoutManager(this@DashboardActivity)
-
+        recyclerView =findViewById(R.id.recylerView)
 
         imageList.add(R.drawable.bike)
         imageList.add(R.drawable.sign)
@@ -44,6 +45,13 @@ class DashboardActivity : AppCompatActivity() {
         descList.add("This is bike")
         descList.add("This is sign")
         descList.add("This is bgi")
+
+        adapter=SignAdapter(this@DashboardActivity,
+            imageList,titleList,descList)
+
+        recyclerView.adapter=adapter
+        recyclerView.layoutManager=LinearLayoutManager(this@DashboardActivity)
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
